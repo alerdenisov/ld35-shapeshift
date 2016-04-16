@@ -12,10 +12,10 @@ namespace TriangleMinecraft.Render.Helpers
             switch (type)
             {
                 case VoxelPoints.PointAB:
-                    ApplyMatrix(ref result, Matrix4x4.TRS(Vector3.zero, Quaternion.Euler(0, 90f, -90f), Vector3.one));
+                    ApplyMatrix(ref result, Matrix4x4.TRS(Vector3.zero, Quaternion.Euler(180f, 180f, 0), Vector3.one));
                     break;
                 case VoxelPoints.PointBA:
-                    ApplyMatrix(ref result, Matrix4x4.TRS(Vector3.zero, Quaternion.Euler(0, -90f, -90f), Vector3.one));
+                    ApplyMatrix(ref result, Matrix4x4.TRS(Vector3.zero, Quaternion.Euler(180f, 0, 0), Vector3.one));
                     break;
                 case VoxelPoints.PointBB:
                     ApplyMatrix(ref result, Matrix4x4.TRS(Vector3.zero, Quaternion.Euler(0, 180f, 0), Vector3.one));

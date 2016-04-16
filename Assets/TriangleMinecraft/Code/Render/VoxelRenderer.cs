@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
+using Extensions;
 using TriangleMinecraft.Render.Helpers;
 using UnityEngine;
 
@@ -38,18 +39,31 @@ namespace TriangleMinecraft.Render
         {
             var mesh = new ThreadableMesh();
             var tmpMap = new VoxelMap();
+            mesh.World = tmpMap;
             List<int> triangles = new List<int>();
             List<Vector3> vertices = new List<Vector3>();
             var index = 0;
-            for (int y = 0; y < 1; y++)
+            var px = 2;
+            var pz = 2;
+            for (int y = 0; y < tmpMap.Height; y++)
             {
-                for (int z = 0; z < tmpMap.Dimensions; z++)
+                for (int z = 0; z < 10; z++)
                 {
-                    for (int x = 0; x < tmpMap.Dimensions; x++)
+                    for (int x = 0; x < 10; x++)
                     {
-                        var voxel = tmpMap.GetVoxel(x, y, z);
-                        vertices.AddRange(MakeVertices(voxel, x, y, z));
-                        triangles.AddRange(MakeTriangles(ref index, voxel));
+                        var voxel = tmpMap.GetVoxel(px + x, y, pz + z);
+                        var neighbors = tmpMap.GetNeighbors(px + x, y, pz + z);
+                        if (x == 0)
+                            neighbors[(int)VoxelNeibor.West] = default(Voxel);
+                        if (x == 9)
+                            neighbors[(int)VoxelNeibor.East] = default(Voxel);
+                        if (z == 0)
+                            neighbors[(int)VoxelNeibor.North] = default(Voxel);
+                        if (z == 9)
+                            neighbors[(int)VoxelNeibor.South] = default(Voxel);
+
+                        vertices.AddRange(MakeVertices(voxel, neighbors, px + x, y, pz + z));
+                        triangles.AddRange(MakeTriangles(ref index, voxel, neighbors));
                     }
                 }
             }
@@ -60,56 +74,166 @@ namespace TriangleMinecraft.Render
             return mesh;
         }
 
-        private int[] MakeTriangles(ref int index, Voxel voxel)
+        private int[] MakeTriangles(ref int index, Voxel voxel, Voxel[] neibors)
         {
             List<int> triangles = new List<int>();
-            triangles.AddRange(RenderPointTriangles(ref index, voxel.PointAA, VoxelPoints.PointAA));
-            triangles.AddRange(RenderPointTriangles(ref index, voxel.PointAB, VoxelPoints.PointAB));
-            triangles.AddRange(RenderPointTriangles(ref index, voxel.PointBA, VoxelPoints.PointBA));
-            triangles.AddRange(RenderPointTriangles(ref index, voxel.PointBB, VoxelPoints.PointBB));
+            triangles.AddRange(RenderPointTriangles(ref index, voxel.PointAA, Faces(voxel, neibors, VoxelPoints.PointAA), VoxelPoints.PointAA));
+            triangles.AddRange(RenderPointTriangles(ref index, voxel.PointAB, Faces(voxel, neibors, VoxelPoints.PointAB), VoxelPoints.PointAB));
+            triangles.AddRange(RenderPointTriangles(ref index, voxel.PointBA, Faces(voxel, neibors, VoxelPoints.PointBA), VoxelPoints.PointBA));
+            triangles.AddRange(RenderPointTriangles(ref index, voxel.PointBB, Faces(voxel, neibors, VoxelPoints.PointBB), VoxelPoints.PointBB));
 
             return triangles.ToArray();
         }
-        private Vector3[] MakeVertices(Voxel voxel, int x, int y, int z)
+        private Vector3[] MakeVertices(Voxel voxel, Voxel[] neibors, int x, int y, int z)
         {
             List<Vector3> vertices = new List<Vector3>();
-            vertices.AddRange(RenderPointVertices(voxel.PointAA, VoxelPoints.PointAA, x, y, z));
-            vertices.AddRange(RenderPointVertices(voxel.PointAB, VoxelPoints.PointAB, x, y, z));
-            vertices.AddRange(RenderPointVertices(voxel.PointBA, VoxelPoints.PointBA, x, y, z));
-            vertices.AddRange(RenderPointVertices(voxel.PointBB, VoxelPoints.PointBB, x, y, z));
+            vertices.AddRange(RenderPointVertices(voxel.PointAA, Faces(voxel, neibors, VoxelPoints.PointAA), VoxelPoints.PointAA, x, y, z));
+            vertices.AddRange(RenderPointVertices(voxel.PointAB, Faces(voxel, neibors, VoxelPoints.PointAB), VoxelPoints.PointAB, x, y, z));
+            vertices.AddRange(RenderPointVertices(voxel.PointBA, Faces(voxel, neibors, VoxelPoints.PointBA), VoxelPoints.PointBA, x, y, z));
+            vertices.AddRange(RenderPointVertices(voxel.PointBB, Faces(voxel, neibors, VoxelPoints.PointBB), VoxelPoints.PointBB, x, y, z));
 
             return vertices.ToArray();
         }
 
-        private Vector3[] RenderPointVertices(byte point, VoxelPoints type, int x, int y, int z)
+        private FaceCulling Faces(Voxel voxel, Voxel[] neibors, VoxelPoints type)
+        {
+            FaceCulling culling = FaceCulling.None;
+
+            switch (type)
+            {
+                case VoxelPoints.PointAA:
+                    culling = FaceCulling.All;
+                    if (voxel.PointAA == 0 || voxel.PointBB == 0 || voxel.PointAB == 0 || voxel.PointBA == 0)
+                        culling -= FaceCulling.Face;
+                    if(neibors[(int)VoxelNeibor.North].PointBA == 0 || neibors[(int)VoxelNeibor.North].PointBB == 0)
+                        culling -= FaceCulling.Left;
+                    if (neibors[(int) VoxelNeibor.West].PointAB == 0 || neibors[(int) VoxelNeibor.West].PointBB == 0)
+                        culling -= FaceCulling.Right;
+                    if(neibors[(int) VoxelNeibor.Down].PointBA == 0 || neibors[(int) VoxelNeibor.Down].PointAB == 0)
+                        culling -= FaceCulling.Foot;
+//                    culling = FaceCulling.None;
+                    break;
+                case VoxelPoints.PointAB:
+                    culling = FaceCulling.All;
+                    if (voxel.PointAA == 0 || voxel.PointBB == 0 || voxel.PointAB == 0 || voxel.PointBA == 0)
+                        culling -= FaceCulling.Face;
+                    if (neibors[(int)VoxelNeibor.East].PointBA == 0 || neibors[(int)VoxelNeibor.East].PointAA == 0)
+                        culling -= FaceCulling.Right;
+                    if (neibors[(int)VoxelNeibor.North].PointBA == 0 || neibors[(int)VoxelNeibor.North].PointBB == 0)
+                        culling -= FaceCulling.Left;
+                    if (neibors[(int)VoxelNeibor.Top].PointAA == 0 || neibors[(int)VoxelNeibor.Top].PointBB == 0)
+                        culling -= FaceCulling.Foot;
+//                    culling = FaceCulling.None;
+                    break;
+                case VoxelPoints.PointBA:
+                    culling = FaceCulling.All;
+                    if (voxel.PointAA == 0 || voxel.PointBB == 0 || voxel.PointAB == 0 || voxel.PointBA == 0)
+                        culling -= FaceCulling.Face;
+                    if (neibors[(int)VoxelNeibor.West].PointAB == 0 || neibors[(int)VoxelNeibor.West].PointBB == 0)
+                        culling -= FaceCulling.Right;
+                    if (neibors[(int)VoxelNeibor.South].PointAA == 0 || neibors[(int)VoxelNeibor.South].PointAB == 0)
+                        culling -= FaceCulling.Left;
+                    if (neibors[(int)VoxelNeibor.Top].PointAA == 0 || neibors[(int)VoxelNeibor.Top].PointBB == 0)
+                        culling -= FaceCulling.Foot;
+//                    culling = FaceCulling.None;
+                    break;
+                case VoxelPoints.PointBB:
+                    culling = FaceCulling.All;
+                    if (voxel.PointAA == 0 || voxel.PointBB == 0 || voxel.PointAB == 0 || voxel.PointBA == 0)
+                        culling -= FaceCulling.Face;
+                    if (neibors[(int)VoxelNeibor.East].PointBA == 0 || neibors[(int)VoxelNeibor.East].PointAA == 0)
+                        culling -= FaceCulling.Right;
+                    if (neibors[(int)VoxelNeibor.South].PointAA == 0 || neibors[(int)VoxelNeibor.South].PointAB == 0)
+                        culling -= FaceCulling.Left;
+                    if (neibors[(int)VoxelNeibor.Down].PointAB == 0 || neibors[(int)VoxelNeibor.Down].PointBA == 0)
+                        culling -= FaceCulling.Foot;
+//                    culling = FaceCulling.None;
+
+                    break;
+            }
+
+            return culling;
+        }
+
+        private Vector3[] RenderPointVertices(byte point, FaceCulling culling, VoxelPoints type, int x, int y, int z)
         {
             if (point == 0) return new Vector3[0];
             Vector3[] vertices = new Vector3[12];
-            var odd = (x + z)%2 != 0;
-            Array.Copy(CachedVertices[(int)type + (odd ? 4 : 0)], vertices, 12);
-
-            for (int i = 0; i < vertices.Length; i++)
+            var odd = (x + (y-1) + z)%2 != 0;
+            odd = false;
+            // destination index (increment after Array Copy)
+            var di = 0;
+            if (!culling.HasFlag(FaceCulling.Foot))
             {
-                vertices[i].x += x * 2;
-                vertices[i].y += y * 2;
-                vertices[i].z -= z * 2;
+                Array.Copy(CachedVertices[(int) type + (odd ? 4 : 0)], 0, vertices, di, 3);
+                di += 3;
             }
 
-            return vertices;
+            if (!culling.HasFlag(FaceCulling.Face))
+            {
+                Array.Copy(CachedVertices[(int) type + (odd ? 4 : 0)], 3, vertices, di, 3);
+                di += 3;
+            }
+
+            if (!culling.HasFlag(FaceCulling.Right))
+            {
+                Array.Copy(CachedVertices[(int) type + (odd ? 4 : 0)], 6, vertices, di, 3);
+                di += 3;
+            }
+
+            if (!culling.HasFlag(FaceCulling.Left))
+            {
+                Array.Copy(CachedVertices[(int) type + (odd ? 4 : 0)], 9, vertices, di, 3);
+                di += 3;
+            }
+
+            var final = new Vector3[di];
+            for (int i = 0; i < final.Length; i++)
+            {
+                final[i].x = vertices[i].x + x * 2;
+                final[i].y = vertices[i].y + y * 2;
+                final[i].z = vertices[i].z - z * 2;
+            }
+
+            return final;
         }
 
-        private int[] RenderPointTriangles(ref int i, byte point, VoxelPoints type)
+        private int[] RenderPointTriangles(ref int i, byte point, FaceCulling culling, VoxelPoints type)
         {
             if(point == 0) return new int[0];
             var r = new int[12];
-            for (int index = 0; index < r.Length; index++)
+            var index = 0;
+            if (!culling.HasFlag(FaceCulling.Foot))
             {
-                r[index] = i + index;
+                r[index++] = i++; // FOOT
+                r[index++] = i++;
+                r[index++] = i++;
+            }
+            if (!culling.HasFlag(FaceCulling.Face))
+            {
+                r[index++] = i++; // Face
+                r[index++] = i++;
+                r[index++] = i++;
+            }
+            if (!culling.HasFlag(FaceCulling.Right))
+            {
+                r[index++] = i++; // Right
+                r[index++] = i++;
+                r[index++] = i++;
             }
 
-            i += 12;
+            if (!culling.HasFlag(FaceCulling.Left))
+            {
+                r[index++] = i++; // Left
+                r[index++] = i++;
+                r[index++] = i++;
+            }
 
-            return r;
+            var final = new int[index];
+            for (int j = 0; j < final.Length; j++)
+                final[j] = r[j];
+
+            return final;
         }
 
 
