@@ -1,1 +1,0 @@
-The Menger Sponge model was imported from Magica Voxel (https://voxel.codeplex.com/) but can be freely redistributed as it is just a standard mathematical function. This has been confirmed by the author.

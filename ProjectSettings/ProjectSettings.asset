@@ -324,7 +324,27 @@ PlayerSettings:
   psp2InfoBarColor: 0
   psmSplashimage: {fileID: 0}
   spritePackerPolicy: 
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    1: 
+    2: 
+    4: 
+    5: 
+    6: 
+    7: 
+    9: 
+    13: 
+    14: 
+    15: 
+    16: 
+    17: 
+    18: 
+    19: 
+    20: 
+    21: 
+    22: 
+    23: 
+    24: 
+    25: 
   metroPackageName: ShapeshiftGame
   metroPackageVersion: 
   metroCertificatePath: 

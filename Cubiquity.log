@@ -1,49 +1,52 @@
 ********************************************************************************
 *                             Initializing Cubiquity                           *
 ********************************************************************************
-[00:54:14, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/Examples/ImportedFromHeightmap.vdb'
-[00:54:22, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/Examples/ImportedFromHeightmap.vdb'
-[00:55:02, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/Examples/ImportedFromHeightmap.vdb'
-[00:57:12, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/Examples/ImportedCity.vdb'
-[00:57:47, Info   ]: Resizing compressed data buffer to 144307bytes. This should only happen once
-[00:57:48, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/Examples/Planet.vdb'
-[00:57:48, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/Examples/Planet.vdb'
-[00:58:01, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/Examples/Tests/MengerSponge.vdb'
-[00:58:01, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/Examples/Tests/MengerSponge.vdb'
-[00:58:01, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/Examples/Tests/MengerSponge.vdb'
-[00:58:01, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/Examples/Tests/MengerSponge.vdb'
-[00:58:01, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/Examples/Tests/MengerSponge.vdb'
-[00:58:01, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/Examples/Tests/MengerSponge.vdb'
-[00:58:01, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/Examples/Tests/MengerSponge.vdb'
-[00:58:01, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/Examples/Tests/MengerSponge.vdb'
-[00:58:01, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/Examples/Tests/MengerSponge.vdb'
-[00:58:01, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/Examples/Tests/MengerSponge.vdb'
-[00:58:01, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/Examples/Tests/MengerSponge.vdb'
-[00:58:01, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/Examples/Tests/MengerSponge.vdb'
-[00:58:01, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/Examples/Tests/MengerSponge.vdb'
-[00:58:01, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/Examples/Tests/MengerSponge.vdb'
-[00:58:01, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/Examples/Tests/MengerSponge.vdb'
-[00:58:01, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/Examples/Tests/MengerSponge.vdb'
-[00:58:01, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/Examples/Tests/MengerSponge.vdb'
-[00:58:01, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/Examples/Tests/MengerSponge.vdb'
-[00:58:01, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/Examples/Tests/MengerSponge.vdb'
-[00:58:01, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/Examples/Tests/MengerSponge.vdb'
-[01:01:01, Info   ]: Creating empty voxel database as 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/2d-simplex-noise-413650052.vdb'
-[01:01:10, Info   ]: Resizing compressed data buffer to 288486bytes. This should only happen once
-[01:01:35, Info   ]: Creating empty voxel database as 'C:/Users/D4AD~1/AppData/Local/Temp/DefaultCompany/ShapeshiftGame/3338D7E0.vdb'
-[01:01:39, Info   ]: Resizing compressed data buffer to 144307bytes. This should only happen once
-[01:01:42, Info   ]: Creating empty voxel database as 'C:/Users/D4AD~1/AppData/Local/Temp/DefaultCompany/ShapeshiftGame/25FCCD67.vdb'
-[01:01:46, Info   ]: Creating empty voxel database as 'C:/Users/D4AD~1/AppData/Local/Temp/DefaultCompany/ShapeshiftGame/4D1C9D86.vdb'
-[01:02:47, Info   ]: Resizing compressed data buffer to 144307bytes. This should only happen once
-[01:02:47, Info   ]: Resizing compressed data buffer to 144307bytes. This should only happen once
-[01:02:47, Info   ]: Creating empty voxel database as 'C:/Users/D4AD~1/AppData/Local/Temp/DefaultCompany/ShapeshiftGame/3481BC16.vdb'
-[01:03:32, Info   ]: Resizing compressed data buffer to 288486bytes. This should only happen once
-[01:03:40, Info   ]: Creating empty voxel database as 'C:/Users/D4AD~1/AppData/Local/Temp/DefaultCompany/ShapeshiftGame/68BC5144.vdb'
-[01:03:42, Info   ]: Creating empty voxel database as 'C:/Users/D4AD~1/AppData/Local/Temp/DefaultCompany/ShapeshiftGame/3B0C8523.vdb'
-[01:03:43, Info   ]: Creating empty voxel database as 'C:/Users/D4AD~1/AppData/Local/Temp/DefaultCompany/ShapeshiftGame/290CC077.vdb'
-[01:04:03, Info   ]: Resizing compressed data buffer to 288486bytes. This should only happen once
-[01:04:03, Info   ]: Resizing compressed data buffer to 288486bytes. This should only happen once
-[01:04:03, Info   ]: Resizing compressed data buffer to 288486bytes. This should only happen once
-[01:05:39, Info   ]: Creating empty voxel database as 'C:/Users/D4AD~1/AppData/Local/Temp/DefaultCompany/ShapeshiftGame/5201FFDC.vdb'
-[01:07:52, Info   ]: Resizing compressed data buffer to 144307bytes. This should only happen once
-[01:08:01, Info   ]: Creating empty voxel database as 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/05672FB7.vdb'
+[16:33:29, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/34DD83E5.vdb'
+[16:34:19, Info   ]: Creating empty voxel database as 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/39FF251E.vdb'
+[16:34:19, Error  ]: Cannot compute the log of zero.
+[16:34:19, Error  ]: Caught 'invalid_argument' at C interface. Message reads: "Cannot compute the log of zero."
+[16:34:47, Info   ]: Creating empty voxel database as 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/2A055239.vdb'
+[16:34:48, Error  ]: Cannot compute the log of zero.
+[16:34:48, Error  ]: Caught 'invalid_argument' at C interface. Message reads: "Cannot compute the log of zero."
+[16:35:35, Info   ]: Creating empty voxel database as 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/1D92275E.vdb'
+[16:36:06, Info   ]: Resizing compressed data buffer to 144307bytes. This should only happen once
+[16:36:07, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/2A055239.vdb'
+[16:36:07, Error  ]: Cannot compute the log of zero.
+[16:36:07, Error  ]: Caught 'invalid_argument' at C interface. Message reads: "Cannot compute the log of zero."
+[16:36:07, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/34DD83E5.vdb'
+[16:36:08, Info   ]: Creating empty voxel database as 'C:/Users/D4AD~1/AppData/Local/Temp/DefaultCompany/ShapeshiftGame/5F1AD658.vdb'
+[16:36:08, Info   ]: Resizing compressed data buffer to 144307bytes. This should only happen once
+[16:38:03, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/2A055239.vdb'
+[16:38:03, Error  ]: Cannot compute the log of zero.
+[16:38:03, Error  ]: Caught 'invalid_argument' at C interface. Message reads: "Cannot compute the log of zero."
+[16:38:03, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/34DD83E5.vdb'
+[16:38:03, Info   ]: Creating voxel database from 'C:/Users/D4AD~1/AppData/Local/Temp/DefaultCompany/ShapeshiftGame/5F1AD658.vdb'
+[16:38:03, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/34DD83E5.vdb'
+[16:38:13, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/34DD83E5.vdb'
+[16:38:14, Info   ]: Creating empty voxel database as 'C:/Users/D4AD~1/AppData/Local/Temp/DefaultCompany/ShapeshiftGame/672B3BBB.vdb'
+[16:38:14, Info   ]: Resizing compressed data buffer to 144307bytes. This should only happen once
+[16:38:16, Info   ]: Resizing compressed data buffer to 144307bytes. This should only happen once
+[16:40:51, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/34DD83E5.vdb'
+[16:40:51, Info   ]: Creating voxel database from 'C:/Users/D4AD~1/AppData/Local/Temp/DefaultCompany/ShapeshiftGame/672B3BBB.vdb'
+[16:42:05, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/34DD83E5.vdb'
+[16:42:07, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/34DD83E5.vdb'
+[16:42:08, Info   ]: Creating empty voxel database as 'C:/Users/D4AD~1/AppData/Local/Temp/DefaultCompany/ShapeshiftGame/3159A215.vdb'
+[16:42:08, Info   ]: Resizing compressed data buffer to 144307bytes. This should only happen once
+[16:42:09, Info   ]: Resizing compressed data buffer to 144307bytes. This should only happen once
+[16:42:29, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/34DD83E5.vdb'
+[16:42:32, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/34DD83E5.vdb'
+[16:42:33, Info   ]: Creating empty voxel database as 'C:/Users/D4AD~1/AppData/Local/Temp/DefaultCompany/ShapeshiftGame/5616343F.vdb'
+[16:42:33, Info   ]: Resizing compressed data buffer to 144307bytes. This should only happen once
+[16:42:35, Info   ]: Resizing compressed data buffer to 144307bytes. This should only happen once
+[16:43:58, Info   ]: Creating voxel database from 'C:/Users/D4AD~1/AppData/Local/Temp/DefaultCompany/ShapeshiftGame/5616343F.vdb'
+[16:43:58, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/34DD83E5.vdb'
+[16:43:58, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/34DD83E5.vdb'
+[16:44:00, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/34DD83E5.vdb'
+[16:44:04, Info   ]: Creating empty voxel database as 'C:/Users/D4AD~1/AppData/Local/Temp/DefaultCompany/ShapeshiftGame/036032DE.vdb'
+[16:44:04, Info   ]: Resizing compressed data buffer to 144307bytes. This should only happen once
+[16:44:07, Info   ]: Resizing compressed data buffer to 144307bytes. This should only happen once
+[16:44:37, Info   ]: Creating voxel database from 'A:/!work-files/ld35/ShapeshiftGame/Assets/StreamingAssets/Cubiquity/VoxelDatabases/34DD83E5.vdb'
+********************************************************************************
+*                             Shutting down Cubiquity                          *
+********************************************************************************
+
